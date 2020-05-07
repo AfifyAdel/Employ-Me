@@ -50,3 +50,5 @@ E:\Projects\EmployMe\EmployMe\obj\Debug\EmployMe.csprojResolveAssemblyReference.
 E:\Projects\EmployMe\EmployMe\obj\Debug\EmployMe.csproj.CoreCompileInputs.cache
 E:\Projects\EmployMe\EmployMe\obj\Debug\EmployMe.dll
 E:\Projects\EmployMe\EmployMe\obj\Debug\EmployMe.pdb
+E:\Projects\EmployMe\EmployMe\obj\Debug\EmployMe.Migrations.initialmigration.resources
+E:\Projects\EmployMe\EmployMe\obj\Debug\EmployMe.csproj.GenerateResource.Cache
