@@ -1,0 +1,27 @@
+﻿@font-face {
+
+}
+
+
+.navbar-default {
+    background-color: #171f58;
+    border-color: #e7e7e7;
+}
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > li > a:focus,
+a
+{
+    color: #fff;
+}
+.navbar-default .navbar-nav > li > a:hover,
+a:hover {
+    color: #cec6c6;
+}
+.navbar-fixed-bottom {
+    background-color: #171f58;
+    color: white;
+}
+.logo-size{
+    margin-top:-7px;
+}
+
