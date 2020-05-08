@@ -6,6 +6,7 @@
 .navbar-default {
     background-color: #171f58;
     border-color: #e7e7e7;
+    height: 50px;
 }
 .navbar-default .navbar-nav > li > a,
 .navbar-default .navbar-nav > li > a:focus,
@@ -24,4 +25,6 @@ a:hover {
 .logo-size{
     margin-top:-7px;
 }
-
+body{
+    padding-top:70px;
+}
