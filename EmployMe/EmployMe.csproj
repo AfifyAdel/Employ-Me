@@ -170,6 +170,10 @@
     <Compile Include="Migrations\202005072213188_initial migration.Designer.cs">
       <DependentUpon>202005072213188_initial migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005082135246_Add Column User Type.cs" />
+    <Compile Include="Migrations\202005082135246_Add Column User Type.Designer.cs">
+      <DependentUpon>202005082135246_Add Column User Type.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -219,6 +223,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202005072213188_initial migration.resx">
       <DependentUpon>202005072213188_initial migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005082135246_Add Column User Type.resx">
+      <DependentUpon>202005082135246_Add Column User Type.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

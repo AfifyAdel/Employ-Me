@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace WebApplication2.Models
@@ -48,10 +49,14 @@ namespace WebApplication2.Models
 
     public class LoginViewModel
     {
+        //[Required]
+        //[Display(Name = "Email")]
+        //[EmailAddress]
+        //public string Email { get; set; }
+
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "User Name")]
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -64,6 +69,14 @@ namespace WebApplication2.Models
 
     public class RegisterViewModel
     {
+        [Required]
+        [DisplayName("UserName")]
+        public string UserName { get; set; }
+
+        [Required]
+        [DisplayName("Account Type")]
+        public string UserType { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

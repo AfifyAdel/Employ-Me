@@ -52,3 +52,4 @@ E:\Projects\EmployMe\EmployMe\obj\Debug\EmployMe.dll
 E:\Projects\EmployMe\EmployMe\obj\Debug\EmployMe.pdb
 E:\Projects\EmployMe\EmployMe\obj\Debug\EmployMe.Migrations.initialmigration.resources
 E:\Projects\EmployMe\EmployMe\obj\Debug\EmployMe.csproj.GenerateResource.Cache
+E:\Projects\EmployMe\EmployMe\obj\Debug\EmployMe.Migrations.AddColumnUserType.resources
