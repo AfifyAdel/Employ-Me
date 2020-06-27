@@ -12,6 +12,7 @@ using System.IO;
 
 namespace EmployMe.Controllers
 {
+    [Authorize]
     public class JobsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

@@ -8,6 +8,7 @@ using WebApplication2.Models;
 
 namespace EmployMe.Controllers
 {
+    [Authorize(Roles = "Admins")]
     public class RolesController : Controller
     {
         ApplicationDbContext db = new ApplicationDbContext();
