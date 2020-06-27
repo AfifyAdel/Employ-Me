@@ -34,5 +34,7 @@ namespace WebApplication2.Models
         public System.Data.Entity.DbSet<EmployMe.Models.Category> Categories { get; set; }
 
         public System.Data.Entity.DbSet<EmployMe.Models.Job> Jobs { get; set; }
+
+        public System.Data.Entity.DbSet<EmployMe.Models.RoleViewModel> RoleViewModels { get; set; }
     }
 }

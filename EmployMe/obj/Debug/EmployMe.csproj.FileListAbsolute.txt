@@ -55,3 +55,4 @@ E:\Projects\EmployMe\EmployMe\obj\Debug\EmployMe.Migrations.AddColumnUserType.re
 E:\Projects\EmployMe\EmployMe\obj\Debug\EmployMe.Migrations.AddCategoryTable.resources
 E:\Projects\EmployMe\EmployMe\obj\Debug\EmployMe.Migrations.AddJobTable.resources
 E:\Projects\EmployMe\EmployMe\obj\Debug\EmployMe.csprojResolveAssemblyReference.cache
+E:\Projects\EmployMe\EmployMe\obj\Debug\EmployMe.Migrations.addroles.resources
