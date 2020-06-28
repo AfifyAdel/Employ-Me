@@ -54,6 +54,85 @@ namespace WebApplication2.Controllers
             }
             return View();
         }
+        public ActionResult GetJobsByUser()
+        {
+            var userId = User.Identity.GetUserId();
+            var jobs = db.ApplyForJobs.Where(x => x.UserId == userId);
+            return View(jobs.ToList());
+        }
+        [Authorize]
+        public ActionResult DetailsOfJob(int id)
+        {
+            var job = db.ApplyForJobs.Find(id);
+            if (job == null)
+            {
+                return HttpNotFound();
+            }
+            return View(job);
+        }
+        // GET: jobs/Edit/5
+        public ActionResult Edit(int id)
+        {
+            var job = db.ApplyForJobs.Find(id);
+            if (job == null)
+                return HttpNotFound();
+            return View(job);
+        }
+
+        // POST: Roles/Edit/5
+        [HttpPost]
+        public ActionResult Edit(ApplyForJob job)
+        {
+            try
+            {
+                // TODO: Add update logic here
+                if (ModelState.IsValid)
+                {
+                    job.ApllyDate = DateTime.Now;
+                    db.Entry(job).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("GetJobsByUser");
+                }
+                else
+                    return View(job);
+            }
+            catch
+            {
+                return View();
+            }
+        }
+        // GET: Roles/Delete/5
+        public ActionResult Delete(int id)
+        {
+            var job = db.ApplyForJobs.Find(id);
+            if (job == null)
+                return HttpNotFound();
+            return View(job);
+        }
+
+        // POST: Roles/Delete/5
+        [HttpPost]
+        public ActionResult Delete(ApplyForJob job)
+        {
+            try
+            {
+                // TODO: Add delete logic here
+
+                if (ModelState.IsValid)
+                {
+                    var deletedJob = db.ApplyForJobs.Find(job.Id);
+                    db.ApplyForJobs.Remove(deletedJob);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                    return View(job);
+            }
+            catch
+            {
+                return View(job);
+            }
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
