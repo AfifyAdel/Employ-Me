@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using EmployMe.Models;
 using WebApplication2.Models;
 using System.IO;
+using Microsoft.AspNet.Identity;
 
 namespace EmployMe.Controllers
 {
@@ -58,6 +59,8 @@ namespace EmployMe.Controllers
                 string imagePath = Path.Combine(Server.MapPath("~/Uploads"), upload.FileName);
                 upload.SaveAs(imagePath);
                 job.JobImage = upload.FileName;
+                job.UserID = User.Identity.GetUserId();
+
                 db.Jobs.Add(job);
                 db.SaveChanges();
                 return RedirectToAction("Index");

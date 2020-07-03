@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using WebApplication2.Models;
 
 namespace EmployMe.Models
 {
@@ -18,6 +19,8 @@ namespace EmployMe.Models
         public string JobImage { get; set; }
         [DisplayName("Job Type")]
         public int CategoryId { get; set; }
+        public string UserID { get; set; }
         public virtual Category category { get; set; } // virtual for lazy loading
+        public virtual ApplicationUser User { get; set; }
     }
 }

@@ -133,6 +133,26 @@ namespace WebApplication2.Controllers
                 return View(job);
             }
         }
+        [Authorize]
+        public ActionResult GetJobsByPublisher()
+        {
+            var UserID = User.Identity.GetUserId();
+            var Jobs = from app in db.ApplyForJobs
+                       join job in db.Jobs
+                       on app.JobId equals job.Id
+                       where job.User.Id == UserID
+                       select app;
+
+            var grouped = from job in Jobs
+                          group job by job.Job.JobTitle
+                          into gr
+                          select new JobsViewModel
+                          {
+                              JobTitle = gr.Key,
+                              Items = gr
+                          };
+            return View(grouped.ToList());
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

@@ -57,3 +57,4 @@ E:\Projects\EmployMe\EmployMe\obj\Debug\EmployMe.Migrations.AddJobTable.resource
 E:\Projects\EmployMe\EmployMe\obj\Debug\EmployMe.csprojResolveAssemblyReference.cache
 E:\Projects\EmployMe\EmployMe\obj\Debug\EmployMe.Migrations.addroles.resources
 E:\Projects\EmployMe\EmployMe\obj\Debug\EmployMe.Migrations.ApplyJobs.resources
+E:\Projects\EmployMe\EmployMe\obj\Debug\EmployMe.Migrations.EditJobModel.resources
