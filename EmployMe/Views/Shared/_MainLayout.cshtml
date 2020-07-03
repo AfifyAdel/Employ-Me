@@ -31,12 +31,6 @@
                             </a>
                         </li> 
                         <li>
-                            <a href="~/Categories">
-                                <i class="glyphicon glyphicon-th"></i>
-                                Categories
-                            </a>
-                        </li>
-                        <li>
                             <a href="#">
                                 <i class="glyphicon glyphicon-exclamation-sign"></i>
                                 About us
@@ -47,6 +41,12 @@
                                 <i class="glyphicon glyphicon-envelope"></i>
                                 Contact us
                             </a>
+                        </li>
+                        <li>
+                            @using (Html.BeginForm("Search","Home",FormMethod.Post))
+                            {
+                                <input type="text" name="searchName" id="searchName" placeholder="Search" />
+                            }
                         </li>
                     </ul>
                     <!--Partial Login-->

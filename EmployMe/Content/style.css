@@ -9,8 +9,7 @@
     height: 50px;
 }
 .navbar-default .navbar-nav > li > a,
-.navbar-default .navbar-nav > li > a:focus,
-a
+.navbar-default .navbar-nav > li > a:focus
 {
     color: #fff;
 }
@@ -21,6 +20,20 @@ a:hover {
 .logo-size{
     margin-top:-7px;
 }
-body{
-    
+#searchName {
+    width: 130px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    background-image: url('../Images/icons8-search-24.png');
+    background-position: right;
+    background-repeat: no-repeat;
+    padding: 12px 12px 12px 12px;
+    transition: width 0.4s ease-in-out;
+    margin-top:10px;
+}
+
+#searchName:focus {
+    width: 100%;
 }

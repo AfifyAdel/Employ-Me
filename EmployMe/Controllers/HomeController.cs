@@ -166,6 +166,18 @@ namespace WebApplication2.Controllers
 
             return View();
         }
-       
+        public ActionResult Search()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Search(string searchName)
+        {
+            var result = db.Jobs.Where(x => x.JobTitle.Contains(searchName)
+            || x.JobContent.Contains(searchName)
+            || x.category.CategoryName.Contains(searchName)
+            || x.category.CategoryDescription.Contains(searchName)).ToList();
+            return View(result);
+        }
     }
 }
