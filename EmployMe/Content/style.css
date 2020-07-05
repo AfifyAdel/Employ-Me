@@ -37,3 +37,16 @@ a:hover {
 #searchName:focus {
     width: 100%;
 }
+.img-size{
+    font-size:90px;
+}
+.navbar-user{
+    padding:10px;
+    padding-bottom:0px;
+    width:350px;
+}
+@media(min-width:992px){
+    .col-md-3{
+        width:23%;
+    }
+}

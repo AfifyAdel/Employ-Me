@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 using WebApplication2.Models;
 
 namespace EmployMe.Models
@@ -14,6 +15,7 @@ namespace EmployMe.Models
         [DisplayName("Job Name")]
         public string JobTitle { get; set; }
         [DisplayName("Job Content")]
+        [AllowHtml]
         public string JobContent { get; set; }
         [DisplayName("Job Image")]
         public string JobImage { get; set; }

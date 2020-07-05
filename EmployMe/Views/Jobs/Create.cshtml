@@ -1,5 +1,5 @@
 ﻿@model EmployMe.Models.Job
-
+<script src="~/Scripts/ckeditor/ckeditor.js"></script>
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
@@ -31,7 +31,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.JobContent, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.JobContent, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextAreaFor(model => model.JobContent, new { htmlAttributes = new { @class = "form-control" ,@id = "JobContent"} })
                 @Html.ValidationMessageFor(model => model.JobContent, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -75,7 +75,8 @@
                         return false;
                     }
                 })
-            });
+        });
+        CKEDITOR.replace("JobContent");
     </script>
 }
 

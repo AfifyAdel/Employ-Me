@@ -176,6 +176,38 @@ namespace WebApplication2.Controllers
             return View(model);
         }
 
+        //Edit Profile
+        public ActionResult EditProfile()
+        {
+            var UserId = User.Identity.GetUserId();
+            var user = db.Users.Where(x => x.Id == UserId).SingleOrDefault();
+            EditProfileViewModel profile = new EditProfileViewModel();
+            profile.UserName = user.UserName;
+            profile.Email = user.Email;
+            return View(profile);
+        }
+        [HttpPost]
+        public ActionResult EditProfile(EditProfileViewModel profile)
+        {
+            var UserId = User.Identity.GetUserId();
+            var user = db.Users.Where(x => x.Id == UserId).SingleOrDefault();
+            if (!UserManager.CheckPassword(user, profile.CurrentPassword))
+            {
+                ViewBag.Message = "Password not correct";
+            }
+            else
+            {
+                var newPasswordHash = UserManager.PasswordHasher.HashPassword(profile.NewPassword);
+                user.UserName = profile.UserName;
+                user.Email = profile.Email;
+                user.PasswordHash = newPasswordHash;
+                db.Entry(user).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                ViewBag.Message = "Edit done successfully";
+            }
+
+            return View();
+        }
         //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]

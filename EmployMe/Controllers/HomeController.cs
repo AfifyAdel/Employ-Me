@@ -3,6 +3,8 @@ using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 using WebApplication2.Models;
@@ -159,12 +161,31 @@ namespace WebApplication2.Controllers
 
             return View();
         }
-
+        [HttpGet]
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
+        }
+        [HttpPost]
+        public ActionResult Contact(ContactModel contact)
+        {
+            var mail = new MailMessage();
+            var loginInfo = new NetworkCredential("Email","Password");
+            mail.From = new MailAddress(contact.Email);
+            mail.To.Add(new MailAddress("afifyadel25@gmail.com"));
+            mail.Subject = contact.Subject;
+            mail.IsBodyHtml = true;
+            string body = "From" + contact.Name + "<br>" +
+                            "Email" + contact.Email + "<br>" +
+                            "Subject" + contact.Subject + "<br>" +
+                            "Message <b>" + contact.Message + "/b>";
+            mail.Body = contact.Message;
+
+            var smtpClint = new SmtpClient("smtp.gmail.com",587);
+            smtpClint.EnableSsl = true;
+            smtpClint.Credentials = loginInfo;
+            smtpClint.Send(mail);
+            return RedirectToAction("Index");
         }
         public ActionResult Search()
         {

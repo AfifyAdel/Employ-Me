@@ -3,27 +3,26 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
+<div class="jumbotron alert alert-info">
     <h3>Welcome </h3>
     <p>Welcome to the job search space for all its categories. You can post a job if you are a publisher, You can apply for a job if you are looking for a job</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">More details &raquo;</a></p>
 </div>
 
 @foreach (var item in Model)
 {
-    <div class="panel panel-default" style="padding:15px">
-        <h1 class="panel-heading">@Html.DisplayFor(modelItem => item.CategoryName)</h1>
-        <h5>@Html.DisplayFor(modelItem => item.CategoryDescription)</h5>
-        <div class="row">
+    <div class="panel panel-info">
+        <div class="panel-heading"><h1>@Html.DisplayFor(modelItem => item.CategoryName)</h1></div>
+        <div class="row-panel-body">
+            <h5 style="margin-left:20px">@Html.DisplayFor(modelItem => item.CategoryDescription)</h5>
             @foreach (var subItem in item.Jobs)
             {
 
-                <div class="col-md-3 thumbnail" style="margin-left:20px;margin-bottom:30px;height:380px">
+                <div class="col-md-3 thumbnail" style="margin-bottom:30px;min-height:380px">
                     <img src="~/Uploads/@subItem.JobImage" width="100" height="50" alt="Computer Hope logo small" />
-                    <h3>@Html.DisplayFor(modelItem => subItem.JobTitle)</h3>
-                    <h5>@Html.DisplayFor(modelItem => subItem.JobContent)</h5>
+                    <h3 style="margin-left:3px">@Html.DisplayFor(modelItem => subItem.JobTitle)</h3>
+                    <h5 style="margin-left:3px">@Html.Raw(HttpUtility.HtmlDecode(Html.DisplayFor(modelItem => subItem.JobContent).ToString()))</h5>
                     @Html.ActionLink("Apply", "Details", new { JobId = subItem.Id },new { @class="btn btn-primary"}) 
-                </div>
+                </div >
             }
         </div>
     </div>
