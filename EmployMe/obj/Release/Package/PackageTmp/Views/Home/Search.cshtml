@@ -1,0 +1,24 @@
+﻿@model IEnumerable<EmployMe.Models.Job>
+
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+<div class="panel panel-info">
+    <h1 class="panel-heading">Search Result</h1>
+    <div class="row-panel-body">
+        @foreach (var subItem in Model)
+        {
+
+            <div class="col-md-3 thumbnail" style="margin-left:20px;margin-bottom:30px;height:380px">
+                <img src="~/Uploads/@subItem.JobImage" width="100" height="50" alt="Computer Hope logo small" />
+                <h3 style="margin-left:3px">@Html.DisplayFor(modelItem => subItem.JobTitle)</h3>
+                <h5 style="margin-left:3px">@Html.Raw(HttpUtility.HtmlDecode(Html.DisplayFor(modelItem => subItem.JobContent).ToString()))</h5>
+                @Html.ActionLink("Apply", "Details", new { JobId = subItem.Id }, new { @class = "btn btn-primary" })
+            </div>
+        }
+    </div>
+</div>
+

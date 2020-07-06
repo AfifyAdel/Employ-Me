@@ -1,0 +1,41 @@
+﻿@model EmployMe.Models.ApplyForJob
+
+@{
+    ViewBag.Title = "DetailsOfJob";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Details Of Job</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+
+        <dt>
+            Aplly Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApllyDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job.JobTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job.JobTitle)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "GetJobsByUser")
+</p>
